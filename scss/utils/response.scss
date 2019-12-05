@@ -1,0 +1,14 @@
+@import "core/response";
+
+.show-from-tablet {
+    display: none !important;
+@include respond-to(tablet) {
+        display: block !important;
+    }
+}
+
+.hide-after-mobile {
+@include respond-to(tablet){
+        display: none !important;
+    }
+}

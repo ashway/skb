@@ -1,0 +1,30 @@
+@import "../../scss/utils/all.scss";
+
+.header {
+  border-bottom: 1px solid #E6E8E0;
+
+  &>div {
+    height: 100px;
+    @include flex(row, space-between, center);
+    .phone {
+      &>div:first-child {
+        line-height: 26px;
+      }
+    }
+
+    .logo {
+      position: relative;
+      width: 157px;
+      height: 26px;
+      &:before {
+        @include absoluteCover();
+        content: '';
+        background: url(/static/img/skb_logo.svg) center center no-repeat;
+        background-size: contain;
+
+      }
+    }
+  }
+}
+
+

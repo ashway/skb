@@ -1,0 +1,25 @@
+@import "../../scss/utils/all.scss";
+
+.footer {
+  background: linear-gradient(170.36deg, #038C73 46.78%, #6CC47B 97.01%);
+  padding: 40px 0;
+  color: #ffffff;
+
+  .content {
+    @include flex($align: flex-start);
+
+    &>div {
+      &:first-child {
+        color: rgba(255,255,255,0.5);
+        line-height: 165%;
+      }
+    }
+
+    .phone {
+      &>div:first-child { line-height: 34px; }
+    }
+  }
+
+
+
+}

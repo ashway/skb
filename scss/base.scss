@@ -1,0 +1,302 @@
+@import "utils/reset.scss";
+@import "utils/all.scss";
+@import "fonts.scss";
+
+body {
+  font-family: 'Formular',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight: normal;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  font-size: 18px;
+  line-height: 165%;
+  @include respond-to(mobile) { font-size: 16px; }
+}
+
+a { text-decoration: none; color: #303030; }
+
+.white { color: #ffffff; }
+.green { color: #038C73; }
+.gray { color: $gray; }
+
+.taleft { text-align: left; }
+.taright { text-align: right; }
+.tacenter { text-align: center; }
+.tajustify { text-align: justify; }
+
+.nowrap { white-space: nowrap; }
+.bold { font-weight: 500; }
+.relative { position: relative; }
+
+.f-xbig { font-size: 50px }
+.f-xlbig { font-size: 38px }
+.f-big { font-size: 28px }
+.f-sbig { font-size: 25px }
+.f-small { font-size: 15px }
+.f-xsmall { font-size: 13px }
+.f-xxsmall { font-size: 12px }
+
+.mt60 { margin-top: 60px !important; }
+
+.mb10 { margin-bottom: 10px !important; }
+.mb20 { margin-bottom: 20px !important; }
+.mb40 { margin-bottom: 40px !important; }
+.mb60 { margin-bottom: 60px !important; }
+
+.flex-as-left { align-self: flex-start }
+.flex-as-right { align-self: flex-end }
+
+.golroy {
+  font-family: 'Gilroy',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.bg {
+  position: relative;
+  z-index: 0;
+  background-color: #ffffff;
+
+  &.image {
+    background: url(/static/img/bg.png) left top no-repeat;
+    background-size: cover;
+  }
+
+ }
+
+.inline-block {
+  display: inline-block;
+}
+
+.relative { position: relative; }
+
+.container {
+  @include flex(column, space-between, stretch);
+  @include margin-between(0);
+  min-height: 100vh;
+  &>* {
+    width: 100%;
+  }
+}
+
+.main {
+  position: relative;
+  flex: 1;
+}
+
+.content {
+  position: relative;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  z-index: 2;
+  max-width: 1100px;
+}
+
+.button {
+  position: relative;
+  @include flex(row, center, center);
+  height: 60px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 30px;
+  min-width: 215px;
+  max-width: 300px;
+  color: #ffffff;
+  line-height: 120%;
+  background-color: #F65E64;
+  cursor: pointer;
+
+  &:hover {
+    top: -2px;
+  }
+
+  &:active {
+    top: 0;
+  }
+
+  &.border {
+    border: 2px solid #F65E64;
+    box-sizing: border-box;
+    border-radius: 60px;
+    background-color: transparent;
+    color: #F65E64;
+    font-weight: 500;
+  }
+
+}
+
+//---------------------------------------------------------------------------------
+
+.index-page {
+  position: relative;
+  overflow: hidden;
+
+  .offer-list {
+    padding-top: 145px;
+    padding-bottom: 80px;
+  }
+
+  .offer-show {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    &>div {
+      display: inline-block;
+      &>div {
+        @include flex(column, flex-start, center);
+        @include margin-between(30px);
+      }
+    }
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    .column {
+      max-width: 572px;
+      @include margin-between(25px);
+    }
+  }
+
+  .men {
+    position: absolute;
+    z-index: 2;
+    right: 5%;
+    bottom: 0;
+    width: 37%;
+    height: 90%;
+    max-width: 708px;
+    max-height: 1015px;
+    background: url(/static/img/popov.png) left bottom no-repeat;
+    background-size: contain;
+
+    &.current-offer {
+      right: 0;
+      width: 43%;
+      height: 100%;
+      @include translate(25%, 25%);
+
+    }
+  }
+
+  .card-container {
+    margin-top: 80px;
+    @include margin-between(40px);
+  }
+
+
+  .icon-v {
+    position: relative;
+    background: linear-gradient(170.36deg, #038C73 46.78%, #6CC47B 97.01%);
+    color: #ffffff;
+    width: 73px;
+    height: 73px;
+    border-radius: 50%;
+    &:before {
+      content: '';
+      @include absoluteCover();
+      color: #ffffff;
+      background: url(/static/img/v.svg) center center no-repeat;
+      background-size: 50%;
+    }
+  }
+
+  .offer-card {
+    min-width: 731px;
+    max-width: 731px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    padding: 34px 59px;
+    @include margin-between(30px);
+
+    .oc-info {
+
+      .f-xlbig {
+        margin-right: 120px;
+      }
+
+      @include flex($justify: flex-start, $align: flex-start);
+      @include margin-between-horizontal(50px);
+      &>div>div {
+        &:first-child {
+          font-weight: 500;
+          line-height: 1.2;
+        }
+        &:last-child {
+          font-family: 'Gilroy',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+          font-size: 16px;
+          color: $gray;
+        }
+      }
+    }
+  }
+
+  .add-info {
+    max-width: 849px;
+    align-self: stretch;
+    @include flex($justify: flex-start, $align: flex-start);
+    @include margin-between-horizontal(100px);
+
+    .pass-spr {
+      @include flex();
+      @include margin-between-horizontal(40px);
+    }
+
+
+    .icon {
+      position: relative;
+      padding-left: 40px;
+      font-family: 'Gilroy',-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+      line-height: 1.2;
+      font-size: 16px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 41px;
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &.pass {
+        &:before {
+          background-image: url(/static/img/pas.svg);
+        }
+      }
+
+      &.spr {
+        padding-left: 46px;
+        &:before {
+          width: 36px;
+          background-image: url(/static/img/spr.svg);
+        }
+      }
+
+
+      &.loc {
+        padding-left: 46px;
+        &:before {
+          width: 36px;
+          background-image: url(/static/img/loc.svg);
+        }
+      }
+    }
+  }
+
+  .offer-page-triangle {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform:  translate(40%, -50%) rotate(40deg);
+
+    background: linear-gradient(116.19deg, #038C73 46.78%, #6CC47B 97.01%);
+  }
+
+}
+
